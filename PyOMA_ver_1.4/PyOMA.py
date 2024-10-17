@@ -904,6 +904,7 @@ def FDDsvp(data, fs, df=0.01, pov=0.5, window='hann'):
     
     # Plot of the singular values in log scale
     fig, ax = plt.subplots()
+    plt.close()
     for _i in range(nch):
     #    ax.semilogy(_f, S_val[_i, _i]) # scala log
         ax.plot(_f[:], 10*np.log10(S_val[_i, _i])) # decibel
@@ -1263,7 +1264,7 @@ $\xi$ = %.2f%s'''% (fn_EFDD, float(xi_EFDD)*100,"%"),transform=_ax4.transAxes)
     
     Freq = np.array(Freq_E)
     Damp = np.array(Damp_E)
-    Fi = np.array(Fi_E)
+    Fi = np.array(Fi_E, dtype=object)
 
     Results={}
     Results['Frequencies'] = Freq
